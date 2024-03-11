@@ -1,33 +1,1584 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* General Styling */
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    list-style-type: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+
+/* Imports */
+
+
+/* Icons */
+
+@import url("https://use.fontawesome.com/releases/v5.14.0/css/all.css");
+@import url("https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
+
+/* Fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+/* CSS Start */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    font-family: 'Montserrat', sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::selection {
+    color: #fff;
+    background: black;
+}
+
+a {
+    display: inline-block;
+    color: #000;
+    transition: all 300ms ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+}
+
+i[class^="bx"] {
+    vertical-align: middle;
+}
+
+ul,
+address {
+    margin-bottom: 0;
+}
+
+.imgFluid {
+    max-width: 100%;
+}
+
+.primary-color {
+    color: var(--color-primary);
+}
+
+.section-content .subHeading {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.section-content .heading {
+    font-size: 3.25rem;
+    line-height: 1.1;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.section-content p {
+    color: #666;
+    line-height: 2;
+}
+
+.section-content span {
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.theme-btn {
+    background-image: -webkit-linear-gradient( 6deg, rgb(248, 188, 8) 0%, rgb(236, 130, 48) 100%);
+    padding: 10px 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    border: 1px solid orange;
+    color: #fff;
+}
+
+.theme-btn:hover {
+    column-fill: balance;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-linear-gradient(6deg, rgb(248, 188, 8) 0%, rgb(236, 130, 48) 100%);
+    border-color: orange;
+}
+
+.themelight {
+    border: 1px solid black;
+    padding: 10px 40px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    color: #000;
+}
+
+.themelight:hover {
+    background-image: -webkit-linear-gradient( 6deg, rgb(248, 188, 8) 0%, rgb(236, 130, 48) 100%);
+    color: #fff;
+    border-color: orange;
+}
+
+
+/******  Header Section Start  ******/
+
+.header-main {
+    position: relative;
+    width: 100%;
+    top: 0px;
+    padding: 10px 0px;
+}
+
+.header-logo a {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
+
+.header-logo a:hover {
+    color: #000;
+}
+
+.header-logo img {
+    width: 120px;
+}
+
+.header-nav ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 38px;
+}
+
+.header-end {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    gap: 20px;
+}
+
+.header-nav {
+    height: 100%;
+}
+
+.header-nav ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-login {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-nav ul li a::before {
+    position: absolute;
+    content: "";
+    background-image: -webkit-linear-gradient( 6deg, rgb(248, 188, 8) 0%, rgb(236, 130, 48) 100%);
+    height: 3px;
+    width: 0%;
+    border-radius: 20px;
+    bottom: -1px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: all 0.6s ease;
+}
+
+.header-nav ul li a:focus {
+    outline: none;
+}
+
+.header-nav ul li a:hover:before {
+    width: 100%;
+}
+
+
+/******  Header Section End  ******/
+
+
+/*********  First Banner Section Start  **********/
+
+.first-banner-sec {
+    background: url(/images/first-banner.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 130px 0px 120px 0px;
+}
+
+.first-banner-txt {
+    text-align: center;
+    padding: 30px 0px 0px 0px;
+}
+
+.first-banner-txt h2 {
+    font-size: 110px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    line-height: 60px;
+}
+
+.first-banner-txt h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+    color: black;
+}
+
+.first-banner-txt h6 {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+
+.first-banner-txt h4 span {
+    position: relative;
+    z-index: 9;
+    color: white;
+}
+
+.first-banner-txt h4 span::before {
+    position: absolute;
+    content: "";
+    background: red;
+    height: 100px;
+    width: 60px;
+    bottom: 10px;
+    z-index: -1;
+    left: -9px;
+}
+
+.first-banner-txt h6 span {
+    position: relative;
+    color: #fff;
+    z-index: 99;
+}
+
+.first-banner-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px 0px 0px;
+    gap: 15px;
+}
+
+.search-function input {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 46.44px 7.56px rgba(0, 0, 0, 0.06);
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.search-function span {
+    font-size: 25px;
+    position: absolute;
+    left: 10px;
+    top: 4px;
+}
+
+.search-function {
+    position: relative;
+}
+
+.search-function input::placeholder {
+    font-size: 14px;
+    text-align: center;
+    color: #000;
+}
+
+.search-location input {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 46.44px 7.56px rgba(0, 0, 0, 0.06);
+    border-radius: 50px;
+    border: 1px solid white;
+    padding: 10px 21px 10px 15px;
+    text-align: center;
+    background-image: -webkit-linear-gradient( 6deg, rgb(248, 188, 8) 0%, rgb(236, 130, 48) 100%);
+}
+
+.search-location {
+    position: relative;
+}
+
+.search-location span {
+    position: absolute;
+    content: "";
+    left: 20px;
+    top: 4px;
+    font-size: 25px;
+}
+
+.search-location input::placeholder {
+    padding: 0px 0px 0px 30px;
+    font-size: 14px;
+    color: black;
+}
+
+.search-location input:focus {
+    outline: none;
+}
+
+.search-function input:focus {
+    outline: none;
+}
+
+
+/***********  First Banner Section End  **********/
+
+
+/***********  Second Banner Section Start  **********/
+
+.for-paid-sec {
+    background: url(/images/second-banner.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 0px;
+}
+
+.paid-txt {
+    text-align: center;
+    color: #ffff;
+}
+
+.paid-txt h4 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0px 0px 15px 0px;
+}
+
+.paid-txt p {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.for-paid-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+/***********  Second Banner Section End  **********/
+
+
+/***********  Looking For Vendors Section Start  **********/
+
+.event-name {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #ffffff78;
+    top: 50%;
+    display: flex;
+    border-radius: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+}
+
+.event-img img {
+    width: 100%;
+    transform: rotate(0deg);
+    transition: all 0.6s ease;
+}
+
+.looking-vendors-sec {
+    padding: 50px 0px 50px 0px;
+}
+
+.vendor-head {
+    padding: 30px 0px 40px 0px;
+    text-align: center;
+    position: relative;
+}
+
+.vendor-head h3 {
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: black;
+    position: relative;
+}
+
+.event-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px 0px;
+}
+
+.event-img img:hover {
+    transform: rotate(360deg);
+}
+
+.looking-vendors-sec .container {
+    max-width: 1200px;
+}
+
+.vendor-head h3::before {
+    position: absolute;
+    content: "";
+    background: red;
+    width: 190px;
+    height: 1px;
+    right: 38%;
+    top: -16px;
+}
+
+.vendor-head h3::after {
+    position: absolute;
+    content: "";
+    background: red;
+    width: 200px;
+    height: 1px;
+    bottom: -16px;
+    left: 40%;
+}
+
+
+/***********  Looking For Vendors Section End  **********/
+
+
+/***********  Looking For Events Section Start  **********/
+
+.event-card img {
+    width: 100%;
+}
+
+.event-card {
+    background-image: -webkit-linear-gradient( 6deg, rgb(248, 188, 8) 0%, rgb(236, 130, 48) 100%);
+    position: relative;
+    margin: 25px 0px 25px 0px;
+}
+
+.apply-btn {
+    background: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 8px 6px;
+    position: absolute;
+    top: 158px;
+    right: 90px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.buy-btn {
+    padding: 10px 5px;
+    position: absolute;
+    right: 0;
+    background-image: -webkit-linear-gradient( 6deg, rgb(248, 188, 8) 0%, rgb(236, 130, 48) 100%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 500;
+    top: 158px;
+}
+
+.event-txt-box {
+    padding: 20px;
+}
+
+.event-txt-box h4 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.event-txt-box h5 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.event-txt-box p {
+    margin: 0;
+    font-size: 12px;
+    color: #fff;
+}
+
+.event-near-btn {
+    padding: 10px 0px 0px 0px;
+    text-align: end;
+}
+
+.event-near-btn a {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: end;
+}
+
+.view-more-btn {
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.popular-event-sec {
+    padding: 50px 0px;
+}
+
+
+/***********  Looking For Events Section End  **********/
+
+
+/***********  Brand Image Section Start  **********/
+
+.brand-image-sec {
+    padding: 40px 0px 60px 0px;
+}
+
+.brand-img img {
+    width: 100%;
+}
+
+.brand-image-sec .container {
+    max-width: 1140px;
+}
+
+
+/***********  Brand Image Section End  **********/
+
+
+/***********  Newsletter Section Start  **********/
+
+.newsletter-sec {
+    background-image: -webkit-linear-gradient( 6deg, rgb(248, 188, 8) 0%, rgb(236, 130, 48) 100%);
+    padding: 20px 0px;
+}
+
+.newsletter {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.newsletter img {
+    width: 70px;
+}
+
+.newsletter-txt h4 {
+    font-size: 30px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.newsletter-txt p {
+    color: #ffff;
+    font-size: 12px;
+}
+
+.newsletter-txt {
+    padding: 15px 0px 0px 0px;
+}
+
+.newsletter-field input {
+    padding: 18px 30px;
+    width: 100%;
+    display: block;
+    border: none;
+    border-radius: 50px;
+}
+
+.newsletter-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.newsletter-field button {
+    border: 1px solid rgb(226, 6, 20);
+    padding: 13px 35px;
+    position: absolute;
+    right: 22px;
+    border-radius: 40px;
+    color: #fff;
+    background: rgb(226, 6, 20);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.6s ease;
+    font-size: 14px;
+}
+
+.newsletter-field button:hover {
+    background: transparent;
+    color: rgb(226, 6, 20);
+}
+
+.newsletter-field input:focus {
+    outline: none;
+}
+
+.newsletter-field input::placeholder {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
+
+
+/***********  Newsletter Section End  **********/
+
+
+/***********  footer Section Start  **********/
+
+footer.footer-main {
+    background-color: rgb(226, 6, 20);
+    padding: 80px 0px 0px 0px;
+}
+
+.footer-txt h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 24px;
+    padding: 0px 0px 20px 0px;
+}
+
+.footer-txt p {
+    font-size: 13px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0px 0px 10px 0px;
+}
+
+.footer-txt ul {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.footer-txt ul li a {
+    font-size: 24px;
+    color: #fff;
+}
+
+.footer-links h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 24px;
+    padding: 0px 0px 20px 0px;
+}
+
+.footer-contact h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    font-size: 24px;
+    padding: 0px 0px 20px 0px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    padding: 0px 0px 10px 0px;
+    font-size: 14px;
+    position: relative;
+}
+
+.footer-links ul li a::before {
+    position: absolute;
+    content: "";
+    background: #fff;
+    width: 0%;
+    height: 2px;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: all 0.6s ease;
+}
+
+.footer-links ul li a:hover:before {
+    width: 100%;
+}
+
+.footer-contact p {
+    margin: 0px;
+    padding: 0px 0px 20px 0px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.footer-contact p span {
+    font-size: 20px;
+    padding: 0px 30px 0px 0px;
+}
+
+.footer-copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-copyright p {
+    margin: 0px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.footer-copyright img {
+    width: 300px;
+}
+
+.footer-copyright {
+    margin: 20px 0px 30px 0px;
+    position: relative;
+}
+
+.footer-copyright::before {
+    position: absolute;
+    content: "";
+    background: #fff;
+    width: 100%;
+    height: 1px;
+    top: -15px;
+}
+
+
+/***********  footer Section End  **********/
+
+
+/***********  About Us page CSS Start  **********/
+
+.inner-pg-banner {
+    background: url('/images/inner-bg-img.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0px;
+}
+
+.inner-pg-txt {
+    text-align: center;
+}
+
+.inner-pg-txt h3 {
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.inner-pg-link a {
+    color: #fff;
+    font-size: 18px;
+}
+
+.inner-pg-link a:hover {
+    color: #fff;
+}
+
+.inner-pg-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.inner-pg-link span {
+    color: #fff;
+}
+
+.who-we-sec {
+    padding: 50px 0px;
+}
+
+.who-we-sec .container {
+    max-width: 1140px;
+}
+
+.who-we-txt {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.who-are-img img {
+    width: 100%;
+    padding: 30px;
+    position: relative;
+}
+
+.who-are-img {
+    position: relative;
+}
+
+.who-are-img::before {
+    position: absolute;
+    content: "";
+    background: red;
+    left: -70px;
+    width: 100%;
+    height: 100%;
+}
+
+.who-we-txt h3 {
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: black;
+    text-transform: uppercase;
+    padding: 0px 0px 10px 0px;
+}
+
+.who-we-txt p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: black;
+    padding: 0px 60px 0px 0px;
+}
+
+.mission-img {
+    position: relative;
+}
+
+.mission-img img {
+    width: 100%;
+    padding: 30px;
+    position: relative;
+}
+
+.mission-img::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 70px;
+    background-color: rgb(255, 186, 13);
+}
+
+
+/***********  About Us page CSS End  **********/
+
+
+/***********  Create Event page CSS Start  **********/
+
+.event-banner-img img {
+    width: 100%;
+}
+
+.create-event-sec {
+    padding: 50px 0px 50px 0px;
+}
+
+.create-account-txt h3 {
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #000;
+    margin: 0px 0px 30px 0px;
+}
+
+.account-field input {
+    width: 100%;
+    display: block;
+    padding: 10px 20px;
+    margin: 0px 0px 20px 0px;
+}
+
+.create-event {
+    padding: 0px 70px 0px 0px;
+}
+
+.account-field button {
+    width: 100%;
+    padding: 10px 30px;
+    background: red;
+    color: #fff;
+    border: 1px solid red;
+    transition: all 0.6s ease;
+}
+
+.account-field button:hover {
+    background: transparent;
+    color: red;
+}
+
+.create-or {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0px 0px 0px;
+}
+
+.create-or h5 {
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid #00000024;
+    width: 55px;
+    background: white;
+    padding: 4px 0px;
+}
+
+.create-or::before {
+    position: absolute;
+    content: "";
+    background: black;
+    width: 194px;
+    height: 1px;
+    left: 0px;
+    top: 15px;
+}
+
+.create-or::after {
+    position: absolute;
+    content: "";
+    background: black;
+    width: 194px;
+    height: 1px;
+    right: 0px;
+    top: 15px;
+}
+
+.google-txt {
+    display: flex;
+    align-items: center;
+    border: 1px solid #00000061;
+    padding: 8px 10px;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0px 0px 0px;
+}
+
+.google-txt p {
+    margin: 0;
+    font-size: 16px;
+    color: grey;
+    font-weight: 300;
+}
+
+.account-field input::placeholder {
+    font-size: 14px;
+}
+
+.other-login {
+    margin: 40px 0px 0px 0px;
+}
+
+.other-login h6 {
+    padding: 0px 0px 20px 0px;
+}
+
+.other-logo {
+    display: flex;
+    gap: 50px;
+}
+
+.create-login-btn {
+    margin: 30px 0px 0px 0px;
+}
+
+.create-login-btn a {
+    color: rgb(238, 137, 43);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.basic-info-txt h3 {
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.basic-info-txt h6 {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin: 15px 0px;
+}
+
+.basic-info-txt textarea {
+    width: 100%;
+    display: block;
+    height: 50px;
+    padding: 13px 20px 0px 20px;
+    border: 1px solid #00000042;
+    margin: 4px 0px;
+    resize: none;
+}
+
+.basic-info-txt span {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.basic-info-txt textarea::placeholder {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.basic-info-txt p {
+    padding: 10px 0px 0px 0px;
+    color: black;
+    font-weight: 500;
+}
+
+.basic-info-txt p a {
+    color: red;
+}
+
+.create-events-sec {
+    padding: 50px 0px;
+}
+
+.create-events-sec .container {
+    max-width: 1200px;
+}
+
+.select-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.type-select-option select {
+    padding: 10px 20px;
+    width: 210px;
+    border: 1px solid #0000004a;
+    color: grey;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.tag-form-txt {
+    margin: 30px 0px 0px 0px;
+    padding: 0px 0px 20px 0px;
+    border-bottom: 1px solid #00000047;
+}
+
+.tag-form-txt h3 {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tag-form-txt h6 {
+    padding: 10px 0px;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.tag-form-txt textarea {
+    width: 100%;
+    display: block;
+    height: 50px;
+    padding: 13px 20px 0px 20px;
+    border: 1px solid #00000042;
+    margin: 4px 0px;
+    resize: none;
+}
+
+.tag-form-txt select {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #00000045;
+    color: #0000009c;
+}
+
+.tag-form-txt span {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 10px 0px;
+}
+
+.location-form-txt {
+    margin: 30px 0px 0px 0px;
+}
+
+.location-form-txt h3 {
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+}
+
+.location-form-txt h6 {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.location-btn {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0px 0px 0px;
+}
+
+.location-btn a {
+    padding: 10px 20px;
+    border: 1px solid red;
+    background: #ff000036;
+}
+
+.location-btn a:hover {
+    color: black;
+}
+
+.location.search input {
+    display: block;
+    width: 100%;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #0000004d;
+}
+
+.venue-location {
+    margin: 40px 0px 0px 0px;
+}
+
+.location.search input::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+
+.location.search span {
+    font-size: 25px;
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    color: #00000057;
+}
+
+.location.search input:focus {
+    outline: none;
+}
+
+.location.search {
+    position: relative;
+}
+
+.date-time-txt {
+    margin: 40px 0px 0px 0px;
+}
+
+.date-time-txt h3 {
+    font-weight: 600;
+    color: black;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.date-time-txt p {
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+.basic-calender input {
+    width: 100%;
+    padding: 8px 15px;
+    display: block;
+    border: 1px solid #00000038;
+}
+
+.calender-date {
+    margin: 40px 0px 0px 0px;
+}
+
+.calender-date h6 {
+    padding: 5px 0px 10px 0px;
+    font-family: 'Montserrat', sans-serif;
+    color: grey;
+    font-weight: 400;
+}
+
+.basic-calender {
+    margin: 0px 0px 20px 0px;
+}
+
+.display-time {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.display-time input {
+    height: 30px;
+    width: 30px;
+}
+
+.display-time-txt h5 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: 600;
+    margin: 5px 0px 5px 0px;
+}
+
+.display-time-txt p {
+    margin: 0px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.display-time-txt {
+    margin: 10px 0px;
+}
+
+.time-zone-txt select {
+    padding: 10px 20px 10px 10px;
+    width: 400px;
+    margin: 0px 0px 20px 0px;
+    border: 1px solid #00000047;
+}
+
+.display-start-time-txt {
+    margin: 0px 0px 30px 0px;
+}
+
+.looking-event-sec {
+    padding: 50px 0px;
+}
+
+
+/***********  Create Event page CSS End  **********/
+
+
+/***********  Vendor Product page CSS Start  **********/
+
+.vendor-card {
+    text-align: center;
+    border: 1px solid #0000002e;
+    transition: all 0.6s ease;
+    margin: 0px 0px 30px 0px;
+}
+
+.vendor-card img {
+    width: 100%;
+    padding: 70px;
+}
+
+.vendor-card:hover {
+    box-shadow: 0px 13px 25.55px 9.45px rgba(0, 0, 0, 0.14);
+}
+
+.vendor-txt {
+    padding: 30px 0px 30px 0px;
+    border-top: 1px solid #00000021;
+}
+
+.vendor-reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0px;
+}
+
+.review-stars ul {
+    display: flex;
+    align-items: center;
+}
+
+.review-txt p {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.vendor-txt h4 {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.review-stars ul li {
+    color: rgb(236 196 48);
+}
+
+.vendor-txt a {
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
+
+.vendor-product-sec {
+    padding: 50px 0px;
+}
+
+.vendor-pg-head h3 {
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: black;
+    text-transform: uppercase;
+    padding: 0px 0px 20px 0px;
+}
+
+.vendor-txt a:hover {
+    color: black;
+}
+
+
+/***********  Vendor Product page CSS End  **********/
+
+
+/***********  Vendor Signup page CSS Start **********/
+
+.vendor-signup-img img {
+    width: 100%;
+}
+
+.vendor-signup {
+    padding: 50px 0px;
+}
+
+.vendor-signup-form {
+    padding: 40px 25px 20px 25px;
+    box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.35);
+    background: #fff;
+    margin-top: 10px;
+    margin-left: -90px;
+    width: 320px;
+}
+
+.vendor-form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 0px 20px 0px;
+}
+
+.vendor-form-btn a {
+    border: 1px solid black;
+    padding: 8px 40px;
+    transition: all 0.6s ease;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.vendor-form-btn a:hover {
+    background: red;
+    color: white;
+    border-color: red;
+}
+
+.vendor-field {
+    margin: 0px 0px 20px 0px;
+}
+
+.vendor-field input {
+    width: 100%;
+    display: block;
+    padding: 7px 20px;
+}
+
+.vendor-signup-txt h3 {
+    text-align: center;
+    padding: 0px 0px 10px 0px;
+    font-size: 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.vendor-field input::placeholder {
+    font-size: 13px;
+}
+
+.vendor-signups a {
+    display: block;
+    width: 100%;
+    background: red;
+    border: 1px solid red;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+
+.vendor-signups a:hover {
+    background: transparent;
+    color: red;
+}
+
+.already-acc p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.already-acc {
+    margin: 30px 0px 10px 0px;
+}
+
+.already-acc a {
+    color: red;
+}
+
+
+/***********  Vendor Signup page CSS End **********/
+
+
+/* tabs custom (place nav and tabs anywhere separately)
+----------------------------------------------------------*/
+
+.tabs-custom-nav li a {
+    border: 1px solid black;
+    padding: 8px 40px;
+    transition: all 0.6s ease;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #000;
+}
+
+.tabs-custom-nav li a.current {
+    background: red;
+    color: white;
+    border-color: red;
+}
+
+.tabs-custom .tab-content-panel {
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+.tabs-custom .tab-content-panel.selected {
+    display: block;
+}
+
+
+/* tabs generic (nav and tabs in main div)
+------------------------------------*/
+
+.tab-custom-nav li a {
+    color: black;
+}
+
+.tab-custom-nav li a.current {
+    color: #0076FB;
+}
+
+.tab-custom .tab-content-panel {
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+.tab-custom .tab-content-panel.selected {
+    display: block;
+}
+
+
+/* tabs generic (nav and tabs in main div tabs with style)
+------------------------------------*/
+
+.tabs-main {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+}
+
+.tabs-main ul.tabs-nav {
+    padding: 0px;
+    width: 100%;
+    float: left;
+    margin: 0 0 -1px 0;
+}
+
+.tabs-main ul.tabs-nav li {
+    list-style: none;
+    float: left;
+}
+
+.tabs-main ul.tabs-nav li a {
+    background: #003a7b;
+    border: 1px solid #BCC5cB;
+    border-bottom: 0px;
+    color: white;
+    padding: 7px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.tabs-main ul.tabs-nav li a.current {
+    background: white;
+    color: #003a7b;
+}
+
+.tabs-main .tab-content-panel {
+    background: white;
+    padding: 15px 30px 25px 30px;
+    border: 1px solid #BCC5cB;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+ul.tabs-custom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.tab-txt h4 {
+    font-family: 'Poppins' !important;
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    /* or 33px */
+    color: #333333;
+    text-align: left !important;
+    line-height: 1.5 !important;
+    padding: 35px 0px 10px 0px !important;
+}
+
+.tabs-custom.general {
+    padding: 30px 0px 0px 0px;
+}
+
+
+/*FAQS Page CSS  Closed
+-----------------------------------*/
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px;
+    }
 }

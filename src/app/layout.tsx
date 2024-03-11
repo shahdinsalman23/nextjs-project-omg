@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +14,101 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossOrigin="anonymous" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet" />
+      <body>  
+      <header className="header-main">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-4">
+                    <div className="header-logo">
+                        <Link href={`./`}>Logo here</Link>
+                    </div>
+                </div>
+                <div className="col-lg-6">
+                    <div className="header-nav">
+                        <ul>
+                            <li><Link href={`./`}>Home</Link></li>
+                            <li><Link href={`about`}>About</Link></li>
+                            <li><Link href={`looking-for-vendors`}>Find Vendors</Link></li>
+                            <li><Link href={`vendor-signup`}>Vendor Signup</Link></li>
+                            <li><Link href={`create-event`}>Create Events</Link></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="col-lg-2">
+                    <div className="header-end">
+                        <Link href={`login`} className="header-login">Login</Link>
+                        <Link href={`signup`} className="theme-btn">Signup</Link>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </header>
+
+
+        {children}
+
+       
+
+         <footer className="footer-main">
+    <div className="container">
+        <div className="row">
+            <div className="col-lg-5">
+                <div className="footer-txt">
+                    <h4>About Us</h4>
+                    <p>We do event planning. We connect vendors and event organizers and help different event organizers, City and property owner organize their events.</p>
+                    <ul>
+                        <li><Link href="#"><i className="ri-facebook-fill"></i></Link></li>
+                        <li><Link href="#"><i className="ri-linkedin-fill"></i></Link></li>
+                        <li><Link href="#"><i className="ri-instagram-line"></i></Link></li>
+                        <li><Link href="#"><i className='bx bxl-pinterest-alt'></i></Link></li>
+                    </ul>
+                </div>
+            </div>
+            <div className="col-lg-2">
+                <div className="footer-links">
+                    <h5>Quick links</h5>
+                    <ul>
+                        <li><Link href="#">Home</Link></li>
+                        <li><Link href="#">About</Link></li>
+                        <li><Link href="#">Find vendors</Link></li>
+                        <li><Link href="#">Find events</Link></li>
+                    </ul>
+                </div>
+            </div>
+            <div className="col-lg-2">
+                <div className="footer-links">
+                    <h5>Category</h5>
+                    <ul>
+                        <li><Link href="#">Food</Link></li>
+                        <li><Link href="#">Handcraft</Link></li>
+                        <li><Link href="#">Music</Link></li>
+                        <li><Link href="#">Other</Link></li>
+                    </ul>
+                </div>
+            </div>
+            <div className="col-lg-3">
+                <div className="footer-contact">
+                    <h5>Contact Us</h5>
+                    <p><span><i className="ri-map-pin-line"></i></span>748 Maddux Dr, Daly City CA 94015</p>
+                    <p><span><i className='bx bx-envelope'></i></span>peggy@omgcal.com</p>
+                    <p><span><i className='bx bx-phone-call'></i></span>9253953473</p>
+                </div>
+            </div>
+            <div className="col-lg-12">
+                <div className="footer-copyright">
+                    <p>© 2023 Lorum Ipsum, All Rights Reserved</p>
+                    <img src="images/payment-icon.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+   </footer> 
+
+
+      </body>
     </html>
   );
 }
